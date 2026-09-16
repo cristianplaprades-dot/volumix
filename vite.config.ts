@@ -10,6 +10,6 @@ export default defineConfig(({ mode, command }) => {
   return {
     plugins: [tailwindcss(), tsconfigPaths({ projects: ['./tsconfig.json'] }), tanstackStart({ server: { entry: 'server' } }), ...(command === 'build' ? [nitro({ preset: 'node-server', noExternals: true })] : []), react()],
     resolve: { dedupe: ['react', 'react-dom'] },
-    server: { host: '127.0.0.1', port: 5173 },
+    server: { host: '0.0.0.0', port: 5173 },
   };
 });
